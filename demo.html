@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ES6语法编写</title>
+</head>
+<body>
+	<button id="js_btn">点击按钮</button>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+</body>
+<script>
+	var str = `这是一个字符串拼接`;
+	console.log(str);
+    var roadPoem = 'Then took the other, as just as fair,nt'
+        + 'And having perhaps the better claimnt'
+        + 'Because it was grassy and wanted wear,nt'
+        + 'Though as for that the passing therent'
+        + 'Had worn them really about the same,nt';
+    console.log(roadPoem);
+    var roadPoems = `Then took the other, as just as fair,
+    And having perhaps the better claim
+    Because it was grassy and wanted wear,
+    Though as for that the passing there
+    Had worn them really about the same,`;
+
+    var oBtn = document.getElementById('js_btn');
+    let a = 'Hello Es6';
+    console.log(a);
+    const adder = {
+        sum: 0,
+        add: (numbers) => { // scope here is important
+			numbers.forEach(n => {
+				adder.sum += n;
+				console.log(adder.sum)
+			});
+		}
+    };
+    adder.add([1, 2, 3]);
+//    oBtn.onclick = function (e) {
+//		console.log(e);
+//    }
+	console.log($('#js_btn'),oBtn)
+    $('#js_btn').click(e => {
+        console.log(e)
+    });
+	var x = 6;
+//	x => x*x;
+//	console.log(x);
+  let dd =   x => {
+        if (x > 0) {
+            return 1;
+        }
+        return 2;
+    }
+    console.log(dd);
+
+    window.color = "red";
+    let color = "green";
+    let obj = {
+        color: "blue"
+    };
+    let sayColor = () => {
+        return this.color;
+    };
+    sayColor.apply(obj);//red
+</script>
+</html>
